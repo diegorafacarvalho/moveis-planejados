@@ -31,7 +31,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O Habit é um app para ajudar a rastrear os hábitos.
 
-- [Visite o Projeto Online](http://SaymonRezendeX.github.io/moveis-customizados)
+    <a href="https://diegorafacarvalho.github.io/moveis-planejados/" target="_blank">Acesse Online</a>
 
 ## 🔖 Layout
 
