@@ -11,7 +11,7 @@ Móveis Customizados é um evento exclusivo, promovido pela Rocketseat para ensi
 </p>
 
 <p align="center">
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+  <img alt="License" src="[s://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=0http00000](https://www.figma.com/file/t1AlNvnDUofyCWqH0gIcPO/Explorer---Projeto-01-(Copy)-(Copy)-(Copy)?type=design&node-id=1-2&mode=design&t=k001nAtxKUxJHni8-4)">
 </p>
 
 <br>
