@@ -1,9 +1,6 @@
-<h1 align="center"> HTML e CSS </h1>
-
-
 ![Projeto 01](https://github.com/diegorafacarvalho/moveis-planejados/assets/116193697/7778500d-866c-4084-9054-0220b5b0df27)
 
-
+<h1 align="center"> HTML e CSS </h1>
 <p align="center">
 Móveis Customizados é um evento exclusivo, promovido pela Rocketseat para ensino de tecnologias WEB. <br/>
 
