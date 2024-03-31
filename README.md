@@ -1,4 +1,4 @@
-![Projeto 01](https://github.com/SaymonRezendeX/moveis-customizados/assets/116193697/73c479b0-0461-4e2d-bd4c-723f782fbb21)
+
 
 
 <h1 align="center"> HTML e CSS </h1>
@@ -20,8 +20,7 @@ Móveis Customizados é um evento exclusivo, promovido pela Rocketseat para ensi
 <br>
 
 <p align="center">
-  <img alt="projeto Habits" src="https://github.com/SaymonRezendeX/moveis-customizados/assets/116193697/73c479b0-0461-4e2d-bd4c-723f782fbb21)
-" width="100%">
+![Projeto 01](https://github.com/diegorafacarvalho/moveis-planejados/assets/116193697/376fb233-07a0-49c8-8206-4c8ff50385ec)
 </p>
 
 ## 🚀 Tecnologias
