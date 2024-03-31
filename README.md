@@ -1,3 +1,5 @@
+
+![Projeto 01](https://github.com/diegorafacarvalho/moveis-planejados/assets/116193697/4ff052d1-4f57-44d9-b6fb-ef43cfbf98f9)
 <h1 align="center"> HTML e CSS </h1>
 
 <p align="center">
@@ -16,9 +18,6 @@ Móveis Customizados é um evento exclusivo, promovido pela Rocketseat para ensi
 
 <br>
 
-<p align="center">
-  <img alt="projeto Habits" src="image/imgpjt.jpg" width="100%">
-</p>
 
 ## 🚀 Tecnologias
 
