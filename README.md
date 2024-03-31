@@ -20,9 +20,7 @@ Móveis Customizados é um evento exclusivo, promovido pela Rocketseat para ensi
 
 <br>
 
-<p align="center">
-  <img alt="projeto Habits" src="image/imgpjt.jpg" width="100%">
-</p>
+
 
 ## 🚀 Tecnologias
 
