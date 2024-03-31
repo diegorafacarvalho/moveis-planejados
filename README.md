@@ -1,49 +1,16 @@
-
-@@ -0,0 +1,47 @@
-< h1  align = " center " > HTML e CSS </ h1 >
-
-< p  alinhar = " centro " >
-Móveis Personalizados é um evento exclusivo, promovido pela Rocketseat para ensino de tecnologias WEB. <br />​​
-
-< p  alinhar = " centro " >
-  < a  href = " #-tecnologias " >Tecnologias</ a > & nbsp ;& nbsp ;& nbsp ; | & nbsp ; nbsp ;​​
-  < a  href = " #-projeto " >Projeto</ a > & nbsp ;& nbsp ;& nbsp ; | & nbsp ; nbsp ;​​
-  < a  href = " #-layout " >Layout</ a > & nbsp ;& nbsp ;& nbsp ; | & nbsp ; nbsp ;​​
-  < a  href = " #memo-licença " >Licença</ a >
-</ p >
-
-< p  alinhar = " centro " >
-  < img  alt = " Licença "  src = " https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000 " >
-</ p >
-
-<br>​​
-
-< p  alinhar = " centro " >
-  < img  alt = " projeto Hábitos "  src = " image/imgpjt.jpg "  width = " 100% " >
-</ p >
-
-## 🚀 Tecnologias
-
+🚀 Tecnologias
 Esse projeto foi desenvolvido com as seguintes tecnologias:
+HTML e CSS
+Git e Github
+Figura
 
--HTML e CSS
--Git e Github
-- Figma
-
-## 💻 Projeto
-
+💻 Projeto
 O Habit é um aplicativo para ajudar a rastrear os hábitos.
 
--  [ Visite o Projeto Online ] ( http://SaymonRezendeX.github.io/moveis-customizados )
+Visite o Projeto Online
+🔖 Disposição
+Você pode visualizar o layout do projeto através do DESSE LINK . É necessário ter conta no Figma para acessá-lo.
 
-## 🔖 Layout
-
-Você pode visualizar o layout do projeto através de [ DESSE LINK ] ( https://www.figma.com/file/N4fR6GVDysoS4mSBk9yCET/Explorer---Projeto-01-(Copy)?type=design&t=CFqgPTjBllIBxXWs-6 ) . É necessário ter conta no [ Figma ] ( https://figma.com ) para acessá-lo.
-
-## : memorando : Licença
-
+📝 Licença
 Esse projeto está sob licença do MIT.
 
----
-
-Feito com ♥ por Rocketseat : wave :  [ Participe da nossa comunidade! ] ( https://discord.gg/rocketseat )
