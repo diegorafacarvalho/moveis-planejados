@@ -15,10 +15,8 @@ Móveis Customizados é um evento exclusivo, promovido pela Rocketseat para ensi
 </p>
 
 <br>
+![Projeto 01](https://github.com/diegorafacarvalho/moveis-planejados/assets/116193697/dd240e2f-2f65-48e3-bb27-00f4f3aa263b)
 
-<p align="center">
-  <img alt="projeto Habits" src="image/imgpjt.jpg" width="100%">
-</p>
 
 ## 🚀 Tecnologias
 
