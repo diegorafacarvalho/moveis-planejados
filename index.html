@@ -1,32 +1,403 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movéis planejados</title>
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-
+    <title>Painel de Projeto BPA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom right, #e0f2fe, #f1f5f9);
+            padding: 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background-color: white;
+            padding: 3rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .header h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            color: #1a202c;
+            line-height: 1.2;
+        }
+        .header p {
+            font-size: 1rem;
+            color: #4a5568;
+            margin-top: 0.5rem;
+        }
+        .grid-container {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(1, 1fr);
+        }
+        @media (min-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .grid-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        .card-icon {
+            width: 4rem;
+            height: 4rem;
+            margin-bottom: 1rem;
+            color: #2563eb;
+        }
+        .card h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+        .card p {
+            font-size: 0.875rem;
+            color: #4b5563;
+        }
+        .detail-page {
+            display: none;
+            flex-direction: column;
+            gap: 1.5rem;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .detail-page h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .detail-page h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2d3748;
+            border-left: 4px solid #4299e1;
+            padding-left: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .detail-page p, .detail-page li {
+            font-size: 1rem;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+        .back-button {
+            margin-top: 2rem;
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #4299e1;
+            color: white;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #3182ce;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background-color: #ebf8ff;
+            font-weight: 600;
+            color: #2b6cb0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-
 <body>
 
-    <div id="hero">
-        <img src="./image/image 1.jpg" alt="Ilustração de uma pessoa vendo movéis">
-        <h1>Ambientes <span>únicos</span> para você!</h1>
-        <p>Nós criamos ambientes <strong>exclusívos</strong> e <strong>únicos</strong>, com muito bom gosto e profissionalismo, investimos tempo e <span>dedicação no seu projeto</span>.</p><br>
-        <p>Tenha<span> ambientes limpos</span> e bem decorados, transmitindo <strong>elegância</strong> e <strong>finesse</strong> para todo aquele que estiver ali.</p>
-        <footer>
-            <div id="line"></div>
-            <a href="https://www.instagram.com/diegorafacarvalho/" target="_blank">Instagram</a>
-            <a href="https://github.com/diegorafacarvalho" target="_blank">Fale conosco</a>
-        </footer>
+<div class="container">
+    <!-- Main Dashboard View -->
+    <div id="dashboard-view" class="content-view">
+        <header class="header">
+            <h1>Painel de Projeto de Automação</h1>
+            <p>Visão visual e interativa dos componentes-chave do processo de Solicitação de Viagem.</p>
+        </header>
+
+        <div class="grid-container">
+            <!-- Card 1: Processo -->
+            <div class="card" onclick="showContent('processo')">
+                <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                <h2>Processo</h2>
+                <p>A documentação completa do processo de negócio e suas regras.</p>
+            </div>
+
+            <!-- Card 2: Workflow -->
+            <div class="card" onclick="showContent('workflow')">
+                <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <h2>Workflow</h2>
+                <p>O fluxo de aprovação e as transições de status da solicitação.</p>
+            </div>
+
+            <!-- Card 3: Formulário -->
+            <div class="card" onclick="showContent('formulario')">
+                <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                <h2>Formulário</h2>
+                <p>A interface do usuário para a entrada de dados da viagem.</p>
+            </div>
+
+            <!-- Card 4: Analytics -->
+            <div class="card" onclick="showContent('analytics')">
+                <svg class="card-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-2v2m-4-2v4m-2 2h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                <h2>Analytics</h2>
+                <p>Relatórios e indicadores de desempenho (KPIs) para gestão.</p>
+            </div>
+        </div>
     </div>
-    
-    <img id="balls" src="./image/balls-decoration.svg" alt="Bolinhas decorativas">
+
+    <!-- Process Detail View -->
+    <div id="processo-view" class="detail-page">
+        <h2 class="text-center">Documento de Especificação</h2>
+        <a href="#" class="back-button" onclick="showDashboard()">Voltar ao Painel</a>
+
+        <h3>1. Objetivo</h3>
+        <p>Padronizar e automatizar o processo de solicitação de viagens corporativas, garantindo controle de custos, agilidade nas aprovações e rastreabilidade de todas as etapas.</p>
+
+        <h3>2. Escopo</h3>
+        <p>Abrange todas as viagens nacionais e internacionais realizadas por colaboradores a serviço da empresa. Inclui desde o pedido inicial até a prestação de contas.</p>
+
+        <h3>3. Papéis e Responsabilidades</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Papel</th>
+                    <th>Responsabilidades</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Solicitante</td>
+                    <td>Preencher formulário de solicitação, anexar documentos (convite, agenda de reunião etc.).</td>
+                </tr>
+                <tr>
+                    <td>Gestor Imediato</td>
+                    <td>Validar a necessidade da viagem e aprovar ou rejeitar.</td>
+                </tr>
+                <tr>
+                    <td>Departamento de Viagens/Facilities</td>
+                    <td>Cotar passagens, hospedagem e registrar reservas.</td>
+                </tr>
+                <tr>
+                    <td>Financeiro</td>
+                    <td>Analisar orçamento, liberar adiantamento ou cartão corporativo.</td>
+                </tr>
+                <tr>
+                    <td>RH</td>
+                    <td>Controlar políticas de viagem, seguro e compliance.</td>
+                </tr>
+                <tr>
+                    <td>Diretoria</td>
+                    <td>Aprovação final para viagens internacionais ou acima de limite de custo.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>6. Regras de Negócio</h3>
+        <ul class="list-disc ml-6 space-y-2">
+            <li><strong>Política de Aprovação:</strong> gestor aprova todas as viagens; diretoria aprova internacionais ou custos > limite.</li>
+            <li><strong>Prazo de Solicitação:</strong> mínimo de 10 dias antes da data da viagem.</li>
+            <li><strong>Orçamento:</strong> solicitações sem centro de custo ou orçamento serão rejeitadas.</li>
+            <li><strong>Prestação de Contas:</strong> comprovantes devem ser enviados em até 5 dias úteis após retorno.</li>
+        </ul>
+
+        <h3>8. Integrações</h3>
+        <ul class="list-disc ml-6 space-y-2">
+            <li><strong>ERP/Financeiro:</strong> para adiantamento e prestação de contas.</li>
+            <li><strong>RH:</strong> para validação de política de viagens e cadastro de colaboradores.</li>
+            <li><strong>E-mail/Notificações:</strong> alertas automáticos em cada etapa.</li>
+        </ul>
+
+        <h3>9. Riscos e Controles</h3>
+        <ul class="list-disc ml-6 space-y-2">
+            <li><strong>Solicitação fora da política:</strong> Validação automática de campos e limites.</li>
+            <li><strong>Perda de comprovantes:</strong> Upload obrigatório e backup automático.</li>
+            <li><strong>Atraso em aprovações:</strong> Notificações automáticas após X horas.</li>
+        </ul>
+    </div>
+
+    <!-- Workflow Detail View -->
+    <div id="workflow-view" class="detail-page">
+        <h2 class="text-center">Workflow</h2>
+        <a href="#" class="back-button" onclick="showDashboard()">Voltar ao Painel</a>
+
+        <h3>4. Fluxo de Trabalho (Workflow)</h3>
+        <p class="font-bold">Etapas principais:</p>
+        <ul class="list-decimal ml-6 space-y-2">
+            <li><strong>Início:</strong> Solicitante acessa o sistema e preenche o Formulário de Solicitação de Viagem.</li>
+            <li><strong>Validação do Gestor:</strong> Gestor aprova ou devolve para ajustes. Se reprovado, processo é encerrado.</li>
+            <li><strong>Cotação e Reserva (Facilities/Viagens):</strong> Recebe solicitação aprovada. Faz cotação de passagens e hospedagem. Envia opções ao solicitante e gestor.</li>
+            <li><strong>Aprovação Financeira:</strong> Verifica orçamento, libera adiantamento ou cartão.</li>
+            <li><strong>Aprovação Final (Diretoria, se necessário):</strong> Para viagens internacionais ou custo acima de X reais.</li>
+            <li><strong>Confirmação de Viagem:</strong> Facilities realiza reserva final. Solicita assinatura eletrônica do termo de política de viagens.</li>
+            <li><strong>Encerramento & Prestação de Contas:</strong> Colaborador envia comprovantes. Financeiro valida e encerra.</li>
+        </ul>
+        <p class="font-bold mt-4">Condições de Roteamento:</p>
+        <ul class="list-disc ml-6 space-y-2">
+            <li>Se o destino for internacional, sempre envia para diretoria.</li>
+            <li>Se o custo estimado > limite definido em política, envia para diretoria.</li>
+            <li>Caso seja apenas deslocamento local (ex: cidade próxima), pular etapas de cotação.</li>
+        </ul>
+
+        <h3>10. Checklist de Implantação</h3>
+        <ul class="list-decimal ml-6 space-y-2">
+            <li>Configurar o workflow no sistema (SoftExpert BPM ou equivalente).</li>
+            <li>Criar o formulário eletrônico com os campos listados.</li>
+            <li>Definir perfis de usuários (Solicitante, Gestor, Financeiro etc.).</li>
+            <li>Configurar alertas e SLAs (ex: aprovação em 48h).</li>
+            <li>Criar dashboards de analytics com KPIs.</li>
+            <li>Treinar usuários e publicar guia rápido.</li>
+        </ul>
+    </div>
+
+    <!-- Formulário Detail View -->
+    <div id="formulario-view" class="detail-page">
+        <h2 class="text-center">Formulário</h2>
+        <a href="#" class="back-button" onclick="showDashboard()">Voltar ao Painel</a>
+
+        <h3>5. Formulário de Solicitação de Viagem</h3>
+        <p class="font-bold">Campos obrigatórios:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Seção</th>
+                    <th>Campos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Dados do Solicitante</td>
+                    <td>Nome, Matrícula/ID, Departamento, E-mail, Telefone.</td>
+                </tr>
+                <tr>
+                    <td>Informações da Viagem</td>
+                    <td>Origem, Destino, Data de Ida, Data de Volta, Objetivo da Viagem.</td>
+                </tr>
+                <tr>
+                    <td>Custos Estimados</td>
+                    <td>Passagem, Hospedagem, Alimentação, Outros.</td>
+                </tr>
+                <tr>
+                    <td>Adiantamento</td>
+                    <td>Valor solicitado, Forma de pagamento.</td>
+                </tr>
+                <tr>
+                    <td>Anexos</td>
+                    <td>Convite, Agenda, Documentos de Evento.</td>
+                </tr>
+                <tr>
+                    <td>Aceite de Política de Viagem</td>
+                    <td>Checkbox de concordância.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="font-bold mt-4">Regras de Validação:</p>
+        <ul class="list-disc ml-6 space-y-2">
+            <li>Campos de data devem garantir data de ida $\le$ data de volta.</li>
+            <li>Valor de adiantamento não pode exceder orçamento estimado.</li>
+            <li>Destino internacional exige anexo de passaporte válido.</li>
+        </ul>
+    </div>
+
+    <!-- Analytics Detail View -->
+    <div id="analytics-view" class="detail-page">
+        <h2 class="text-center">Indicadores e Analytics</h2>
+        <a href="#" class="back-button" onclick="showDashboard()">Voltar ao Painel</a>
+
+        <h3>7. Indicadores e Analytics</h3>
+        <p class="font-bold">Indicadores principais para dashboard:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Indicador</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Tempo Médio de Aprovação</td>
+                    <td>Intervalo entre solicitação e aprovação final.</td>
+                </tr>
+                <tr>
+                    <td>Custo Médio por Viagem</td>
+                    <td>Total gasto dividido pelo número de viagens.</td>
+                </tr>
+                <tr>
+                    <td>% de Solicitações Reprovadas</td>
+                    <td>Acompanhar motivos de reprovação.</td>
+                </tr>
+                <tr>
+                    <td>Adiantamento vs. Gasto Real</td>
+                    <td>Controle de diferenças para ajustes de política.</td>
+                </tr>
+                <tr>
+                    <td>Prazo Médio de Prestação de Contas</td>
+                    <td>Velocidade de encerramento.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="font-bold mt-4">Visualizações sugeridas:</p>
+        <ul class="list-disc ml-6 space-y-2">
+            <li>Gráfico de linha para tempo médio de aprovação por mês.</li>
+            <li>Gráfico de barras para custos por centro de custo.</li>
+            <li>KPI Cards para número de viagens por departamento.</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function showContent(sectionId) {
+        document.querySelectorAll('.content-view').forEach(view => {
+            view.style.display = 'none';
+        });
+        document.getElementById(sectionId + '-view').style.display = 'flex';
+    }
+
+    function showDashboard() {
+        document.querySelectorAll('.content-view').forEach(view => {
+            view.style.display = 'none';
+        });
+        document.getElementById('dashboard-view').style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
